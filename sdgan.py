@@ -627,6 +627,12 @@ if __name__ == '__main__':
     height = 64
     width = 64
     nch = 3
+  elif args.data_set == 'mnist':
+    data_extension = 'png'
+    fname_to_named_id = lambda fn: fn.rsplit('_', 2)[0]
+    height = 28
+    width = 28
+    nch = 3
   else:
     raise NotImplementedError()
 
