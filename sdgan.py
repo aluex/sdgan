@@ -543,7 +543,7 @@ if __name__ == '__main__':
       help='Training directory')
   parser.add_argument('--data_dir', type=str,
       help='Data directory')
-  parser.add_argument('--data_set', type=str, choices=['msceleb12k', 'shoes4k'],
+  parser.add_argument('--data_set', type=str, choices=['msceleb12k', 'shoes4k', 'mnist'],
       help='Which dataset')
   parser.add_argument('--data_id_name_tsv_fp', type=str,
       help='(Optional) alternate names for ids')
@@ -630,9 +630,11 @@ if __name__ == '__main__':
   elif args.data_set == 'mnist':
     data_extension = 'png'
     fname_to_named_id = lambda fn: fn.rsplit('_', 2)[0]
-    height = 28
-    width = 28
+    # print fname_to_named_id('a_b.png')
+    height = 64 # 28
+    width = 64 # 28
     nch = 3
+    # args.model_dim = 28
   else:
     raise NotImplementedError()
 

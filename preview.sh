@@ -1,7 +1,7 @@
-TRAIN_DIR=./train
+TRAIN_DIR=./train_mnist3
 
 export CUDA_VISIBLE_DEVICES="-1"
 python sdgan.py preview ${TRAIN_DIR} \
-	--data_set msceleb12k \
-	--preview_nids 8 \
-	--preview_nobs 6
+	--data_set mnist \
+	--preview_nids 10 \
+	--preview_nobs 1000
